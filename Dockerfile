@@ -4,7 +4,7 @@ EXPOSE 80/udp
 EXPOSE 80/tcp
 RUN apt-get update && apt-get install -y wget unzip bash curl xz-utils
 RUN curl -s https://api.github.com/repos/thepeacockproject/Peacock/releases/latest \
-    | grep -oP "browser_download_url.*\K(https.*linux.*zip)"  \
+    | grep -oP "browser_download_url.*\K(https://.*linux.*\.zip)"  \
     | wget -q -O Peacock.zip -i -
 RUN unzip -q Peacock.zip \
     && rm Peacock.zip \
